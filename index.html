@@ -9,13 +9,27 @@
     <title>Pilaba</title>
 </head>
 <style>
+    .background {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
     body {
-        background-image:url("cool-background.png");
+        background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         color: #3f51b5;
+        margin: 0;
+        padding: 0;
+        color: white;
     }
-    html { height: 100% }
+    html { 
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 </style>
 
 <body>
@@ -81,10 +95,21 @@
         </div>
     </div>
     
+    <canvas class="background"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <script>
-        var ctx = document.getElementById('myChart').getContext('2d');
-        /*var myRadarChart = new Chart(ctx, {
+        window.onload = function() { 
+            Particles.init ({ 
+                selector: '.background',
+                color: ['#0F0', '#FFF', '#F00'],
+                maxParticles: 400
+            }); 
+        };
+    </script>
+    <script>
+        /*var ctx = document.getElementById('myChart').getContext('2d');
+        var myRadarChart = new Chart(ctx, {
             type: 'radar',
             label: "coño",
             data: {
