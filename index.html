@@ -17,17 +17,23 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #FAFAFA;
+            background-color: #10111C;
             margin: 0;
             padding: 0;
-            color: #3a5160;
+            color: #FAFAFA;
+            font-size: large;
+            position: relative;
         }
         p {
             padding: 15px 0px 0px 0px;
         }
+        .overlays{
+          position: absolute;
+        }
     </style>
   </head>
   <body>
+    <img class="overlays" id="coraje" src="./icon.png" height="100">
     <div class="container-fluid">
         <div class="row" style="padding-top:3%; padding-left: 3%; padding-right: 3%;">
             
@@ -52,7 +58,7 @@
                         Just another engineer in the milky way galaxy.
                     </div>
                     <div class="col-md-6 text-right", style="font-size: small;">
-                        Update at 21/03/2022 03:23 UTC
+                        Update at 29/07/2022 21:01 UTC
                     </div>
                 </div>
                 <div class="row" style="padding-bottom: 2%;">
@@ -83,7 +89,7 @@
                     </div>
                 </div>
                 
-                <div class="text-center" style="padding-top: 18%;">
+                <div class="text-center" style="padding-top: 10%;">
                   <div style="font-family:  Verdana, sans-serif;">
                     <b>
                       A = LEFT   &emsp;   D = RIGHT  &emsp;    W = JUMP  &emsp;    SPACE = KICK
@@ -116,7 +122,21 @@
     </div>
 
     <script>
-        console.log("Pale blue dot")
+      var img = document.getElementById('coraje') // or any other selector
+      var pos = getRandomPosition(img)
+          
+      img.style.top  = pos[0]+"px";
+      img.style.left = pos[1]+"px";
+      
+      function getRandomPosition(element) {
+        var x = document.body.offsetHeight-element.clientHeight;
+        var y = document.body.offsetWidth-element.clientWidth;
+        var randomX = Math.floor(Math.random() * x);
+        var randomY = Math.floor(Math.random() * y);
+        return [randomX, randomY];
+      }
+
+      console.log("Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every 'superstar', every 'supreme leader', every saint and sinner in the history of our species lived there-on a mote of dust suspended in a sunbeam")
     </script>
     <script>
       
@@ -191,8 +211,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        canvas.style.width = "680px";
+        canvas.style.height = "425px";
       }
 
       loadingBar.style.display = "block";
