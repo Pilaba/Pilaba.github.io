@@ -155,7 +155,7 @@
       var warningBanner = document.querySelector("#unity-warning");
 
 
-      if (true || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
         document.getElementById('unity-container').remove();
         document.getElementById('controles-juego').remove();
